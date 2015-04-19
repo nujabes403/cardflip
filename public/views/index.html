@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="flipApp">
+<head>
+    <link rel="stylesheet" href="./lib/css/bootstrap.css"/>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="./lib/js/angular.js"></script>
+    <script src="./lib/js/bootstrap.js"></script>
+    <script src="./app/main.js"></script>
+</head>
+<body>
+<div ng-controller='flipCardCtrl' class="well">
+<h1>Flip the Card!</h1>
+    <h3>Score : {{score}}</h3>
+    <table class="table">
+        <tr ng-repeat="img in imgs">
+            <div class="row">
+            <td><img ng-show="img.flipped" class="span2" ng-src="{{img.path}}"/>
+                <img ng-hide="img.flipped" class="span2" ng-src="{{defaultImg}}" ng-click="flip(img)"/></td>
+            </div>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
